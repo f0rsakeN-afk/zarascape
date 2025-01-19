@@ -6,6 +6,7 @@ import { createDownlodLink } from './utils/imageUtils';
 import Features from './components/Features';
 import BeforeAfterSamples from './components/BeforeAfterSamples';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
 
 
 const App: React.FC = () => {
@@ -51,6 +52,7 @@ const App: React.FC = () => {
             <Features />
             <BeforeAfterSamples />
           </div>
+          <Footer />
         </>
       )}
 
