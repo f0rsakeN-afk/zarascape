@@ -1,132 +1,82 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
+import { Card } from './ui/card';
 import { motion } from 'motion/react';
-import { Card, CardContent } from './ui/card';
-import { Eraser, Crop, Proportions } from 'lucide-react';
-
-const features = [
-    {
-        title: "Background Removal",
-        description: "Effortlessly remove image backgrounds with precision, perfect for web and product visuals.",
-        icon: <Eraser className="w-8 h-8" />,
-        glowColor: "group-hover:shadow-violet-500/20",
-        iconColor: "text-violet-500",
-        borderColor: "group-hover:border-violet-500/20"
-    },
-    {
-        title: "Crop & Resize",
-        description: "Easily crop and resize images for the perfect fit on your website or social media.",
-        icon: <Crop className="w-8 h-8" />,
-        glowColor: "group-hover:shadow-blue-500/20",
-        iconColor: "text-blue-500",
-        borderColor: "group-hover:border-blue-500/20"
-    },
-    {
-        title: "Color Adjustments",
-        description: "Enhance image brightness, contrast, and colors to make visuals stand out.",
-        icon: <Proportions className="w-8 h-8" />,
-        glowColor: "group-hover:shadow-indigo-500/20",
-        iconColor: "text-indigo-500",
-        borderColor: "group-hover:border-indigo-500/20"
-    }
-];
-
-const MotionCard = motion(Card);
+import { features } from '@/data';
+import { ArrowRight } from 'lucide-react';
 
 const Features: React.FC = () => {
     return (
-        <motion.div
-            className="grid md:grid-cols-3 gap-8 mb-16"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-        >
-            {features.map((feature, index) => (
-                <MotionCard
-                    key={feature.title}
-                    className={cn(
-                        "group relative overflow-hidden",
-                        "bg-white/[0.05] dark:bg-white/[0.02]", // Very subtle base color
-                        "backdrop-blur-[12px]", // Strong blur effect
-                        "border border-white/[0.05] dark:border-white/[0.02]", // Subtle border
-                        "shadow-[0_8px_32px_0_rgba(0,0,0,0.06)]", // Subtle shadow
-                        feature.borderColor,
-                        feature.glowColor,
-                        "transition-all duration-500 ease-out",
-                    )}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        delay: index * 0.2,
-                        duration: 0.5,
-                        type: "spring",
-                        stiffness: 100
-                    }}
-                    whileHover={{
-                        y: -5,
-                        transition: { duration: 0.3 }
-                    }}
-                >
-                    {/* Glass reflection effect */}
+        <section className="pb-4">
+            {/* Section Header */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-center mb-16 space-y-4"
+            >
+                <div className="flex items-center justify-center gap-2 text-primary">
+                    <div className="h-px w-8 bg-primary/30" />
+                    <span className="text-sm font-medium uppercase tracking-wider">Features</span>
+                    <div className="h-px w-8 bg-primary/30" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                    Powerful AI Tools for
+                    <span className="block mt-1 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        Perfect Results
+                    </span>
+                </h2>
+            </motion.div>
+
+            {/* Features Grid */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+                {features.map((feature, index) => (
                     <motion.div
-                        className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        initial={false}
-                        animate={{
-                            backgroundPosition: ['0% 0%', '100% 100%'],
-                        }}
+                        key={feature.title}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
                         transition={{
-                            duration: 10,
-                            repeat: Infinity,
-                            repeatType: "reverse"
+                            duration: 0.5,
+                            delay: index * 0.2
                         }}
-                    />
-
-                    <CardContent className="p-6 relative">
-                        <motion.div
-                            className={cn(
-                                "mb-6 w-14 h-14 rounded-lg flex items-center justify-center",
-                                "bg-white/[0.08] dark:bg-white/[0.03]",
-                                "backdrop-blur-md",
-                                "border border-white/[0.08] dark:border-white/[0.03]",
-                                "transition-all duration-500"
-                            )}
-                            whileHover={{ scale: 1.05 }}
+                    >
+                        <Card className={`relative h-full p-6 overflow-hidden transition-all duration-300 
+                            hover:translate-y-[-2px] bg-gradient-to-br ${feature.gradient} 
+                            border border-border/50 backdrop-blur-sm ${feature.shadowColor}`}
                         >
-                            <motion.div
-                                className={feature.iconColor}
-                                whileHover={{ rotate: [0, -10, 10, -5, 0] }}
-                                transition={{ duration: 0.4 }}
-                            >
-                                {feature.icon}
-                            </motion.div>
-                        </motion.div>
+                            {/* Icon */}
+                            <div className="mb-6 flex items-center gap-4">
+                                <div className={`p-2.5 rounded-xl bg-card ${feature.iconColor}`}>
+                                    {feature.icon}
+                                </div>
+                                <div className="h-px flex-1 bg-border/50" />
+                            </div>
 
-                        <motion.h3
-                            className={cn(
-                                "text-xl font-semibold mb-3",
-                                "text-foreground/90 dark:text-foreground/80"
-                            )}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: index * 0.2 + 0.3 }}
-                        >
-                            {feature.title}
-                        </motion.h3>
+                            {/* Content */}
+                            <div className="space-y-3">
+                                <h3 className="text-xl font-semibold text-foreground">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </div>
 
-                        <motion.p
-                            className="text-muted-foreground/90 dark:text-muted-foreground/70 leading-relaxed"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: index * 0.2 + 0.4 }}
-                        >
-                            {feature.description}
-                        </motion.p>
-                    </CardContent>
-                </MotionCard>
-            ))}
-        </motion.div>
+                            {/* Learn More Link */}
+                            <div className="mt-6 flex items-center text-sm font-medium text-foreground/80 hover:text-foreground transition-colors group cursor-pointer">
+                                Learn more
+                                <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                            </div>
+
+                            {/* Decorative Elements */}
+                            <div className="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-gradient-to-br from-background/10 to-transparent rounded-full blur-2xl" />
+                        </Card>
+                    </motion.div>
+                ))}
+            </div>
+        </section>
     );
 };
-
 
 export default Features;
