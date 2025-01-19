@@ -28,7 +28,7 @@ export const features: featureTypes[] = [
     title: "Advanced Retouching",
     description: "Perfect your portraits with AI-powered skin smoothing and enhancement.",
     icon: <Sparkles className="w-5 h-5" />,
-    gradient: "from-emerald-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30",
+    gradient: "from-orange-500/20 to-teal-500/20 hover:from-emerald-500/30 hover:to-teal-500/30",
     shadowColor: "shadow-emerald-500/10",
     iconColor: "text-emerald-500"
   }
