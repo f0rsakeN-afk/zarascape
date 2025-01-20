@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import React from 'react';
 import FilerobotImageEditor, { TABS, TOOLS } from 'react-filerobot-image-editor';
 import { createEditorConfig } from '../config/editorConfig';

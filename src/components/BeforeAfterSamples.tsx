@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowLeftRight, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { samples } from '@/data';
+import { sampleTypes } from '@/types';
 
 
 const BeforeAfterSamples: React.FC = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
-        <section className="py-20 relative overflow-hidden">
+        <section id='before' className="py-20 relative overflow-hidden">
             {/* Background Decoration */}
             <motion.div
                 className="absolute inset-0 -z-10 opacity-30"
@@ -62,7 +63,7 @@ const BeforeAfterSamples: React.FC = () => {
                         }
                     }}
                 >
-                    {samples.map((sample, index) => (
+                    {samples.map((sample: sampleTypes, index) => (
                         <motion.div
                             key={index}
                             variants={{

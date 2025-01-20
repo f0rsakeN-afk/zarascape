@@ -95,10 +95,12 @@ const Hero: React.FC<HeroProps> = ({ onImageSelect }) => {
                         </div>
 
                         <div className="flex items-center gap-4">
-                            <Button variant="outline" className="group">
-                                View Examples
-                                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                            </Button>
+                            <a href="#before">
+                                <Button variant="outline" className="group">
+                                    View Examples
+                                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                                </Button>
+                            </a>
                         </div>
 
                         {/* Trust Badge */}

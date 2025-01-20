@@ -3,6 +3,7 @@ import { Card } from './ui/card';
 import { motion } from 'motion/react';
 import { features } from '@/data';
 import { ArrowRight } from 'lucide-react';
+import { featureTypes } from '@/types';
 
 const Features: React.FC = () => {
     return (
@@ -30,7 +31,7 @@ const Features: React.FC = () => {
 
             {/* Features Grid */}
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-                {features.map((feature, index) => (
+                {features.map((feature: featureTypes, index) => (
                     <motion.div
                         key={feature.title}
                         initial={{ opacity: 0, y: 20 }}

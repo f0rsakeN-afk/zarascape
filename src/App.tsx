@@ -8,7 +8,7 @@ import BeforeAfterSamples from './components/BeforeAfterSamples';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 
-
+//@ts-nocheck
 const App: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [editedImage, setEditedImage] = useState<string | null>(null);

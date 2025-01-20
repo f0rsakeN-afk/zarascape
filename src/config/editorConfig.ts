@@ -1,8 +1,7 @@
-import { CropPreset, EditorConfig } from "../types/editor";
 import { TABS } from "react-filerobot-image-editor";
 import Social from "@scaleflex/icons/social";
 
-const cropPresets: CropPreset[] = [
+const cropPresets = [
   {
     titleKey: "square",
     descriptionKey: "1:1",
@@ -150,7 +149,7 @@ const cropPresets: CropPreset[] = [
   },
 ];
 
-export const createEditorConfig = (imageUrl: string): EditorConfig => ({
+export const createEditorConfig = (imageUrl: string) => ({
   source: imageUrl,
   defaultSavedImageType: "png",
   defaultSavedImageName: "edited-image",
