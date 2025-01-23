@@ -25,13 +25,13 @@ A modern, feature-rich image editing web application built with React, TypeScrip
 
 ## 👀 Preview
 
-![demo image]('./src/assets/n1.png)
+![demo image](./src/assets/n1.png)
 
-![demo image]('./src/assets/n2.png)
+![demo image](./src/assets/n2.png)
 
-![demo image]('./src/assets/n3.png)
+![demo image](./src/assets/n3.png)
 
-![demo image]('./src/assets/n4.png)
+![demo image](./src/assets/n4.png)
 
 ## 🏃‍♂️ Getting Started
 
