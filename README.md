@@ -23,6 +23,16 @@ A modern, feature-rich image editing web application built with React, TypeScrip
 - Lucide React Icons
 - Radix UI Components
 
+## 👀 Preview
+
+![demo image]('./src/assets/n1.png)
+
+![demo image]('./src/assets/n2.png)
+
+![demo image]('./src/assets/n3.png)
+
+![demo image]('./src/assets/n4.png)
+
 ## 🏃‍♂️ Getting Started
 
 ### Prerequisites
@@ -33,22 +43,26 @@ A modern, feature-rich image editing web application built with React, TypeScrip
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/f0rsakeN-afk/zarascape.git
 cd zarascape
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
 
 4. Build for production:
+
 ```bash
 npm run build
 ```
@@ -67,11 +81,13 @@ npm run build
 ## 💡 Features Details
 
 ### Image Processing
+
 - Supports JPEG, PNG, GIF, and WebP formats
 - Maximum file size: 10MB
 - High-quality image processing
 
 ### Editing Tools
+
 - Crop with preset ratios
 - Social media optimized presets
 - Color adjustment
@@ -80,6 +96,7 @@ npm run build
 - Annotations
 
 ### Social Media Presets
+
 - LinkedIn
 - Twitter/X
 - Instagram
